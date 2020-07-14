@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="formwrapper">
+        <h3>Fill the form</h3>
+        <form action="POST">
+            <div class="form-field">
+                {{ form.name.label }}
+                {{ form.name }}
+            </div>
+            <div class="form-field">
+                {{ form.age.label }}
+                {{ form.age }}
+            </div>
+            <div class="form-field">
+                {{ form.email.label }}
+                {{ form.email }}
+            </div>
+            {{ form.submit }}
+        </form>
+    </div>
+{% endblock %}
