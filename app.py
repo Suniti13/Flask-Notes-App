@@ -14,7 +14,7 @@ class UserForm(FlaskForm):
 
 
 @app.route('/', methods=['GET', 'POST'])
-def hello():
+def mainForm():
     form = UserForm()
     if form.validate_on_submit():
         return redirect(url_for('success'))

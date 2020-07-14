@@ -2,11 +2,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="../static/main.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello</h1>
-    <br><br>
+    <nav>
+        <ul>
+            <li> <a class="navbarLink" href="{{ url_for('mainForm') }}">FLASKFORM</a> </li>
+            <li style="float: right;"> <a class="navbarLink" href="#">Admin</a> </li>
+        </ul>
+    </nav>
+
+    <br> <br>
     {% block content %}
     {% endblock %}
     

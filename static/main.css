@@ -1,0 +1,30 @@
+
+
+
+li {
+    float: left;
+}
+
+
+.navbarLink {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbarLink:hover {
+    background-color: darkblue;
+}
+
+ul {
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: blue;
+}
