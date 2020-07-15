@@ -1,5 +1,7 @@
 
-
+.inputField {
+    width: 80%;
+}
 
 li {
     float: left;
