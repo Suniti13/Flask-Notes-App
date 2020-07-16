@@ -1,28 +1,32 @@
 from flask import Flask, render_template, url_for
-from flask_wtf import FlaskForm
 from wtforms import Form, StringField, PasswordField, IntegerField, SubmitField
 from wtforms.validators import Length, DataRequired, Email
+from forms import RegisterForm, LoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "123"
 
-class UserForm(FlaskForm):
-    name = StringField('Name', validators = [DataRequired()])
-    age = IntegerField('Age', validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    submit = SubmitField('Submit')
 
 
-@app.route('/', methods=['GET', 'POST'])
-def mainForm():
-    form = UserForm()
+@app.route('/')
+def landing():
+    return render_template('landing.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    return render_template('login.html', form=form)
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    form = RegisterForm()
     if form.validate_on_submit():
-        return redirect(url_for('success'))
-    return render_template('form.html', form=form)
+        return render_template('home.html')
+    return render_template('register.html', form=form)
 
-@app.route('/success')
-def success():
-    return 'Success!'
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
