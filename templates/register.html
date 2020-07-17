@@ -4,26 +4,64 @@
 <div class="formwrapper">
     <div class="formcontent">
         <h2>Create an Account</h2>
-        <form action="POST">
+        <form method="POST">
             <div class="form-field">
+                {{ form.hidden_tag() }}
+
                 {{ form.name.label(class_='label') }}
                 <br>
-                {{ form.name(class_='inputField') }}
+                {% if form.name.errors %}
+                    {{ form.name(class_='inputField invalid-input') }}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                            <span> {{ error }} </span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.name(class_='inputField') }}
+                {% endif %}                
             </div>
             <div class="form-field">
                 {{ form.email.label }}
                 <br>
-                {{ form.email(class_='inputField') }}
+                {% if form.email.errors %}
+                    {{ form.email(class_='inputField invalid-input') }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span> {{ error }} </span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(class_='inputField') }}
+                {% endif %}
             </div>
             <div class="form-field">
-                {{ form.new_password.label }}
+                {{ form.password.label }}
                 <br>
-                {{ form.new_password(class_='inputField') }}
+                {% if form.password.errors %}
+                    {{ form.password(class_='inputField invalid-input') }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span> {{ error }} </span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.password(class_='inputField') }}
+                {% endif %}
             </div>
             <div class="form-field">
                 {{ form.confirm_password.label }}
                 <br>
-                {{ form.confirm_password(class_='inputField') }}
+                {% if form.confirm_password.errors %}
+                    {{ form.confirm_password(class_='inputField invalid-input') }}
+                    <div class="invalid-feedback">
+                        {% for error in form.confirm_password.errors %}
+                            <span> {{ error }} </span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.confirm_password(class_='inputField') }}
+                {% endif %}
             </div>
             <div class="form-field">
                 {{ form.submit }}

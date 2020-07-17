@@ -24,7 +24,20 @@
         </ul>
     </nav>
 
-    <br> <br>
+    <br><br>
+
+    <div class="flashed-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert={{ category }}" >
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
     {% block content %}
     {% endblock %}
     

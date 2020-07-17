@@ -4,8 +4,10 @@
 <div class="formwrapper">
     <div class="formcontent">
         <h2>Login</h2>
-        <form action="POST">
+        <form method="POST">
             <div class="form-field">
+                {{ form.hidden_tag() }}
+
                 {{ form.email.label(class_='label') }}
                 <br>
                 {{ form.email(class_='inputField') }}

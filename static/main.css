@@ -1,6 +1,20 @@
 
+.alert-success {
+    background-color: lightgreen;
+    color: green;
+}
+
+.alert-danger {
+    background-color: rgb(255, 111, 111);
+    color: red;
+}
+
 button a {
     text-decoration: none;
+}
+
+.flashed-messages {
+    border: 1px solid black;
 }
 
 .formcontent {
@@ -40,9 +54,16 @@ button a {
    border-radius: 5px;
 }
 
-.label {
-    
+.invalid-feedback {
+    color: red;
+    font-size: 0.75em;
 }
+
+.invalid-input {
+    border: 1px solid red;
+}
+
+
 
 li {
     float: left;
@@ -68,6 +89,6 @@ ul {
     left: 0;
     padding: 0;
     width: 100%;
-    overflow: hidden;
+    
     background-color: blue;
 }
