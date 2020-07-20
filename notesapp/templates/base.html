@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="stylesheet" href="../static/main.css">
-    <title>Document</title>
+    <title> {{title}} </title>
 </head>
 <body>
     <nav>
@@ -16,6 +16,26 @@
                     NOTES
                 </a>
             </li>
+            {% if current_user.is_authenticated %}
+            <li style="float: right;"> 
+                <a class="navbarLink" href="{{ url_for('logout') }}">
+                    Logout
+                </a> 
+            </li>
+            {% else %}
+            <li> 
+                <a class="navbarLink" 
+                href="{{ url_for('login') }}">
+                    LogIn
+                </a>
+            </li>
+            <li> 
+                <a class="navbarLink" 
+                href="{{ url_for('register') }}">
+                    Register
+                </a>
+            </li>
+            {% endif %}
             <li style="float: right;"> 
                 <a class="navbarLink" href="#">
                     About

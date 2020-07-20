@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import Form, StringField, PasswordField, IntegerField, SubmitField
+from wtforms import Form, StringField, PasswordField, IntegerField, SubmitField, TextAreaField
 from wtforms.validators import Length, DataRequired, Email, EqualTo, ValidationError
 from notesapp.models import User
 
@@ -24,4 +24,10 @@ class RegisterForm(FlaskForm):
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField()
+    submit = SubmitField('Login')
+
+
+class AddNoteForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    body = TextAreaField('Enter your notes', validators=[DataRequired()])
+    submit = SubmitField('Submit')
