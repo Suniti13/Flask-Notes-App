@@ -1,10 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <h1>Landing</h1>
-        <button ><a href="{{ url_for('login') }}">Login</a></button>
-        <button><a href="{{ url_for('register') }}">Register</a></button>
+    <div class="header" >
+        <div class="header-content">
+            <h1>Take Notes Anytime, Anywhere</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, delectus repellendus soluta quibusdam facere.</p>
+            <div class="landing-buttons">
+                <button><a href="{{ url_for('register') }}">Get Started</a></button>
+            </div>
+        </div>
     </div>
+
+    <div class="landing-about">
+        <img id="taking-notes-img" src="{{ url_for('static', filename='undraw_Specs.svg') }}" alt="">
+        <div class="l-about-box">
+            <h3>About</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore doloremque possimus offic</p>
+        </div>
+    </div>
+        
 
 {% endblock %}

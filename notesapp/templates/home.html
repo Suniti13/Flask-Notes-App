@@ -8,7 +8,15 @@
     </div>
 
     <div class="prevNotes">
-
+        {% if prevnotes %}
+            {% for note in prevnotes %}
+                <div>
+                    <h4>{{ note.title }}</h4>
+                    <p> {{ note.content }} </p>
+                    <p> {{ note.date_created }} </p>
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
 
 {% endblock %}

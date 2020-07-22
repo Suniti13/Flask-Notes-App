@@ -10,7 +10,7 @@ def landing():
 
 @app.route('/home')
 def home():
-    return render_template('home.html', title='Home')
+    return render_template('home.html', title='Home', prevnotes=Note.query.filter_by(author=current_user))
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

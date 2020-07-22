@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +10,25 @@
     <nav>
         <!-- List of nav links -->
         <ul>
+            {% if current_user.is_authenticated %}
             <li> 
                 <a class="navbarLink" 
-                href="{{ url_for('landing') }}">
+                href="{{ url_for('home') }}">
                     NOTES
                 </a>
             </li>
-            {% if current_user.is_authenticated %}
             <li style="float: right;"> 
                 <a class="navbarLink" href="{{ url_for('logout') }}">
                     Logout
                 </a> 
             </li>
             {% else %}
+            <li> 
+                <a class="navbarLink" 
+                href="{{ url_for('landing') }}">
+                    NOTES
+                </a>
+            </li>
             <li> 
                 <a class="navbarLink" 
                 href="{{ url_for('login') }}">
@@ -44,19 +50,18 @@
         </ul>
     </nav>
 
-    <br><br>
-
-    <div class="flashed-messages">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="alert={{ category }}" >
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </div>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flashed-messages">
+                        {% for category, message in messages %}
+                            <div class="alert={{ category }}" >
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
 
     {% block content %}
     {% endblock %}
