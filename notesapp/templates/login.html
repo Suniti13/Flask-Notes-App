@@ -18,9 +18,12 @@
                 {{ form.password(class_='inputField') }}
             </div>
             <div class="form-field">
-                {{ form.submit }}
+                {{ form.submit(class_='submitField') }}
             </div>
         </form>
+        <p class="below-form-content" >Not registered yet?
+            <a href="{{ url_for('register') }}">Register</a>
+        </p>
     </div>
 </div>
 {% endblock %}

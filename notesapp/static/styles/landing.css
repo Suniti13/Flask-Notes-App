@@ -1,84 +1,20 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    
-    vertical-align: baseline;
-    background: transparent;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    --Blue: #0000ff;
-    
-    --EerieBlack: #1D201F;
-    --White: #FFF;
-}
-
-.alert-success {
-    background-color: lightgreen;
-    color: green;
-}
-
-.alert-danger {
-    background-color: rgb(255, 111, 111);
-    color: red;
-}
-
-button a {
-    text-decoration: none;
-}
-
-.flashed-messages {
-    border: 1px solid black;
-}
-
-.formcontent {
-    padding: 12px;
-}
-
-.formcontent h2 {
-    text-align: center;
-}
-
-.form-field {
-    width: 90%;
-    margin: 12px auto;
-}
-
-.formwrapper {
-    width: 100%;
-    max-width: 450px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-
-    border: 1px solid rgb(170, 170, 170);
-    border-radius: 5px;
-
-}
-
 .header {
     min-height: 74vh;
     width: 100%;
-    background-image: url(./headerbroad.svg);
+    background-image: url(../images/headerbroad.svg);
     background-repeat: no-repeat;
     background-size: 100% auto;   
 }
 
 @media (max-width:800px) {
     .header {
-        background-image: url(./header800.svg);
+        background-image: url(../images/header800.svg);
     }
 }
 
 @media (max-width:550px) {
     .header {
-        background-image: url(./header550.svg);
+        background-image: url(../images/header550.svg);
     }
 }
 
@@ -133,24 +69,6 @@ button a {
     color: #FFF;
 }
 
-.inputField {
-   width: 100%;
-   height: 40px;
-   margin: 10px 0;
-   padding: 8px 4px;
-   border: 1px solid rgb(170, 170, 170);
-   border-radius: 5px;
-}
-
-.invalid-feedback {
-    color: red;
-    font-size: 0.75em;
-}
-
-.invalid-input {
-    border: 1px solid red;
-}
-
 .l-about-box {
     width: 40%;
     margin: auto;
@@ -184,7 +102,7 @@ button a {
 }
 
 .landing-buttons button {
-    width: 150px;
+    width: 100%;
     height: 40px;
     margin-top: 15px;
     border-radius: 10px;
@@ -194,22 +112,12 @@ button a {
 
 .landing-buttons button a{
     color: #FFF;
+    font-size: 1.2em;
 }
 
-li {
-    float: left;
-}
-
-
-.navbarLink {
-    display: block;
-    padding: 15px 25px;
-    color: white;
-    text-decoration: none;
-}
-
-.navbarLink:hover {
-    background-color: darkblue;
+.lb:hover {
+    background-color: var(--White);
+    color: var(--EerieBlack);
 }
 
 .taking-notes {
@@ -237,16 +145,4 @@ li {
         width: 95%;
         margin-top: 0;
     }
-}
-
-ul {
-    
-    list-style-type: none;
-    margin: 0;
-    margin-top: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-    background-color: blue;
 }

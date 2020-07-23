@@ -1,22 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Home</h1>
+    <div class="notes-home">
+        <div class="addNote">
+            <a href="{{ url_for('addnote') }}"><img class="plus" src="{{ url_for('static', filename='images/plus.svg') }}" alt=""></a></button>
+        </div>
 
-    <div class="addNote">
-        <button> <a href="{{ url_for('addnote') }}"> Add Note </a></button>
+        <div class="prevNotes">
+            {% if prevnotes %}
+                {% for note in prevnotes %}
+                    <div>
+                        <h4>{{ note.title }}</h4>
+                        <p> {{ note.content }} </p>
+                        <p> {{ note.date_created }} </p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
-
-    <div class="prevNotes">
-        {% if prevnotes %}
-            {% for note in prevnotes %}
-                <div>
-                    <h4>{{ note.title }}</h4>
-                    <p> {{ note.content }} </p>
-                    <p> {{ note.date_created }} </p>
-                </div>
-            {% endfor %}
-        {% endif %}
-    </div>
-
 {% endblock %}

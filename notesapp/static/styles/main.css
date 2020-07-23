@@ -1,0 +1,72 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    
+    vertical-align: baseline;
+    
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    --Blue: #0000ff;
+    
+    --EerieBlack: #1D201F;
+    --White: #FFF;
+}
+
+.alert-success {
+    background-color: lightgreen;
+    color: green;
+}
+
+.alert-danger {
+    background-color: rgb(255, 111, 111);
+    color: red;
+}
+
+button a {
+    text-decoration: none;
+}
+
+.flashed-messages {
+    border: 1px solid black;
+}
+
+.invalid-feedback {
+    color: red;
+    font-size: 0.75em;
+}
+
+.invalid-input {
+    border: 1px solid red;
+}
+
+li {
+    float: left;
+}
+
+
+.navbarLink {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbarLink:hover {
+    background-color: darkblue;
+}
+
+ul {
+    
+    list-style-type: none;
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background-color: blue;
+}

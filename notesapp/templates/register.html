@@ -64,9 +64,12 @@
                 {% endif %}
             </div>
             <div class="form-field">
-                {{ form.submit }}
+                {{ form.submit(class_='submitField') }}
             </div>
         </form>
+        <p class="below-form-content" >Already have an account?
+            <a href="{{ url_for('login') }}">Login</a>
+        </p>
     </div>
 </div>
 {% endblock %}
