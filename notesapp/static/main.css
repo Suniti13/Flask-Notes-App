@@ -4,7 +4,7 @@
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 100%;
+    
     vertical-align: baseline;
     background: transparent;
 
@@ -63,7 +63,7 @@ button a {
 }
 
 .header {
-    min-height: 90vh;
+    min-height: 74vh;
     width: 100%;
     background-image: url(./headerbroad.svg);
     background-repeat: no-repeat;
@@ -79,6 +79,18 @@ button a {
 @media (max-width:550px) {
     .header {
         background-image: url(./header550.svg);
+    }
+}
+
+@media (max-width:500px) {
+    .header {
+        min-height: 67vh;
+    }
+}
+
+@media (max-width:400px) {
+    .header {
+        min-height: 55vh;
     }
 }
 
@@ -141,11 +153,24 @@ button a {
 
 .l-about-box {
     width: 40%;
+    margin: auto;
+    padding: 15px;
+    align-self: flex-start;
+}
+
+@media(max-width:600px) {
+    .l-about-box {
+        width: 95%;
+        padding: 15px 55px;
+    }
 }
 
 .landing-about {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    text-align: center;
 }
 
 .landing-about h3 {
@@ -161,7 +186,7 @@ button a {
 .landing-buttons button {
     width: 150px;
     height: 40px;
-    margin-top: 8px;
+    margin-top: 15px;
     border-radius: 10px;
     background-color: var(--EerieBlack);
     color: #FFF;
@@ -187,10 +212,31 @@ li {
     background-color: darkblue;
 }
 
-#taking-notes-img {
-    width: 35%;
-    height: auto;
+.taking-notes {
+    width: 40%;
+    margin: auto;
+    padding: 2%;
+    text-align: center;
+}
 
+#taking-notes-img {
+    width: 75%;
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
+    align-self: center;
+}
+
+@media(max-width:600px) {
+    .taking-notes {
+        width: 80%;
+        height: 60%;
+    }
+
+    .taking-notes-img {
+        width: 95%;
+        margin-top: 0;
+    }
 }
 
 ul {
