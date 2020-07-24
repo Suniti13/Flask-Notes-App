@@ -2,17 +2,16 @@
 
 {% block content %}
     <div class="notes-home">
-        <div class="addNote">
+        
             <a href="{{ url_for('addnote') }}"><img class="plus" src="{{ url_for('static', filename='images/plus.svg') }}" alt=""></a></button>
-        </div>
+        
 
         <div class="prevNotes">
             {% if prevnotes %}
                 {% for note in prevnotes %}
-                    <div>
+                    <div class="prevnote" >
+                        <p> {{ note.date_created.strftime("%d %b %Y") }} </p>
                         <h4>{{ note.title }}</h4>
-                        <p> {{ note.content }} </p>
-                        <p> {{ note.date_created }} </p>
                     </div>
                 {% endfor %}
             {% endif %}
