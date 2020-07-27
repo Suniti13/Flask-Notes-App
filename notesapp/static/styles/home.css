@@ -23,10 +23,19 @@
     max-width: 50px;
 }
 
+.plus:hover {
+    background-color: #0000ff;
+}
+
 .prevNotes {
     width: 95%;
     padding: 10px;
     margin: 5px auto;
+}
+
+.prevNotes a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .prevnote {
@@ -34,8 +43,14 @@
     width: 95%;
     margin: 10px auto;
     padding: 12px;
-    border: 1.5px solid var(--Blue);
+    border: 1px solid gray;
     border-radius: 5px;
+    box-shadow: 3px 3px 6px rgb(180, 180, 180);
+}
+
+.prevnote:hover {
+    width: 96%;
+    border: 1.5px solid var(--Blue);
 }
 
 .prevnote h4 {

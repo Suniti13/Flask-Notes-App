@@ -9,10 +9,12 @@
         <div class="prevNotes">
             {% if prevnotes %}
                 {% for note in prevnotes %}
-                    <div class="prevnote" >
-                        <p> {{ note.date_created.strftime("%d %b %Y") }} </p>
-                        <h4>{{ note.title }}</h4>
-                    </div>
+                    <a href="{{ url_for('note', note_id=note.id) }}">
+                        <div class="prevnote" >
+                            <p> {{ note.date_created.strftime("%d %b %Y") }} </p>
+                            <h4>{{ note.title }}</h4>
+                        </div>
+                    </a>
                 {% endfor %}
             {% endif %}
         </div>

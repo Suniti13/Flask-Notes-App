@@ -45,7 +45,7 @@ def logout():
     logout_user()
     return redirect(url_for('landing'))
 
-@app.route('/notes/new', methods=['GET', 'POST'])
+@app.route('/note/new', methods=['GET', 'POST'])
 def addnote():
     form = AddNoteForm()
     if form.validate_on_submit():
@@ -55,3 +55,8 @@ def addnote():
         flash("Added")
         return redirect( url_for('home') )
     return render_template('addnote.html', form=form, title='Add Note')
+
+@app.route('/note/<int:note_id>', methods=['GET', 'POST'])
+def note(note_id):
+    note = Note.query.get_or_404(note_id)
+    return render_template('note.html', note=note, title=note.title)

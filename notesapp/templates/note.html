@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="notes-home">
+        <div class="prevNotes">                  
+            <div class="prevnote" >
+                <p> {{ note.date_created.strftime("%d %b %Y") }} </p>
+                <h4>{{ note.title }}</h4>
+                <pre> {{ note.content }} </pre>
+            </div>
+        </div>
+    </div>
+{% endblock %}
