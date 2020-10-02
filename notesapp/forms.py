@@ -31,3 +31,8 @@ class AddNoteForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     body = TextAreaField('Enter your notes', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+class EditNoteForm(FlaskForm):
+    title = StringField('Title',validators=[DataRequired()])
+    body = TextAreaField('Enter your notes', validators=[DataRequired()])
+    submit = SubmitField('Submit')

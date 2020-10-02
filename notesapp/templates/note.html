@@ -4,6 +4,7 @@
     <div class="notes-home">
         <div class="prevNotes">                  
             <div class="prevnote" >
+                <a href="/edit/note/{{note.id}}">Edit</a>
                 <p> {{ note.date_created.strftime("%d %b %Y") }} </p>
                 <h4>{{ note.title }}</h4>
                 <pre> {{ note.content }} </pre>
