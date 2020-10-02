@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect, flash
 from notesapp import app, db, bcrypt
 from notesapp.models import User, Note
-from notesapp.forms import RegisterForm, LoginForm, AddNoteForm
+from notesapp.forms import RegisterForm, LoginForm, AddNoteForm, EditNoteForm
 from flask_login import login_user, current_user, logout_user
 
 @app.route('/')
@@ -60,3 +60,16 @@ def addnote():
 def note(note_id):
     note = Note.query.get_or_404(note_id)
     return render_template('note.html', note=note, title=note.title)
+
+@app.route('/edit/note/<int:note_id>', methods=['GET', 'POST'])
+def editnote(note_id):
+    note = Note.query.get_or_404(note_id)
+    form = EditNoteForm()
+    if form.validate_on_submit():
+        setattr(note,"title",form.title.data)
+        setattr(note,"content",form.body.data)
+        setattr(note,"author",current_user)
+        db.session.commit()
+        flash("Edited")
+        return redirect( url_for('note', note_id=note_id) )
+    return render_template('editnote.html', note=note, form=form, title='Edit Note')

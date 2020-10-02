@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="formwrapper">
+    <div class="formcontent">
+        <h2>Edit Note</h2>
+        <form method="POST">
+            <div class="form-field">
+                {{ form.hidden_tag() }}
+                {{ form.title.label(class_='label') }}
+                <br>
+                {% set f = form.title.process_data(note.title) %}
+                {{ form.title(class_='inputField') }}
+            </div>
+            <div class="form-field">
+                {{ form.body.label(class_='label') }}
+                <br>
+                {% set f = form.body.process_data(note.content) %}
+                {{ form.body(class_='inputField') }}
+            </div>
+            <div class="form-field">
+                {{ form.submit(class_='submitField') }}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
