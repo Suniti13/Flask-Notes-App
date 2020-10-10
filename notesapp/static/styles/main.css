@@ -70,3 +70,19 @@ ul {
     height: auto;
     background-color: blue;
 }
+
+.editButton, 
+.deleteButton {
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.editButton {
+    background-color: green;
+}
+
+.deleteButton {
+    background-color: red;
+}

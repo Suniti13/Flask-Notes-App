@@ -4,11 +4,13 @@
     <div class="notes-home">
         <div class="prevNotes">                  
             <div class="prevnote" >
-                <a href="/edit/note/{{note.id}}">Edit</a>
-                <a href="/delete/note/{{note.id}}">Delete</a>
                 <p> {{ note.date_created.strftime("%d %b %Y") }} </p>
                 <h4>{{ note.title }}</h4>
                 <pre> {{ note.content }} </pre>
+                <br>
+                <br>
+                <a href="/edit/note/{{note.id}}"><button class="editButton">Edit</button></a>
+                <a href="/delete/note/{{note.id}}"><button class="deleteButton">Delete</button></a>
             </div>
         </div>
     </div>
