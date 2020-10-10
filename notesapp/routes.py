@@ -73,3 +73,11 @@ def editnote(note_id):
         flash("Edited")
         return redirect( url_for('note', note_id=note_id) )
     return render_template('editnote.html', note=note, form=form, title='Edit Note')
+
+@app.route('/delete/note/<int:note_id>', methods=['GET', 'POST'])
+def deletenote(note_id):
+    note = Note.query.get_or_404(note_id)
+    if note:
+        db.session.delete(note)
+        db.session.commit()
+    return redirect( url_for('home') )
